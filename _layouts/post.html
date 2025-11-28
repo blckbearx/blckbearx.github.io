@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="card text-white bg-dark mt-4 ms-4 me-4">
+    <h4 class="card-header text-white"><b>{{ page.title }}</b></h4>
+    <div class="card-body">
+        <p class="text-muted mb-3">
+            <i class="bi bi-calendar3"></i> {{ page.date | date: "%B %d, %Y" }}
+            {% if page.category %}
+            <span class="ms-3"><i class="bi bi-folder"></i> {{ page.category }}</span>
+            {% endif %}
+            {% if page.tags %}
+            <span class="ms-3">
+                {% for tag in page.tags %}
+                <span class="badge bg-secondary">{{ tag }}</span>
+                {% endfor %}
+            </span>
+            {% endif %}
+        </p>
+        
+        <div class="post-content">
+            {{ content }}
+        </div>
+    </div>
+</div>
+
+<div class="card text-white bg-dark mt-4 ms-4 me-4 mb-4">
+    <div class="card-body">
+        <a href="{{ '/blog/' | relative_url }}" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back to Blog</a>
+    </div>
+</div>
