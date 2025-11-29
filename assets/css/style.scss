@@ -43,6 +43,54 @@ $bg-darker: #161b22;
   }
 }
 
+// Social links styling
+.social-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  .btn-github {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #333;
+    color: #333;
+    
+    &:hover {
+      background-color: #333;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(51, 51, 51, 0.4);
+    }
+  }
+  
+  .btn-youtube {
+    background-color: rgba(255, 0, 0, 0.9);
+    border: 2px solid #c00;
+    color: white;
+    
+    &:hover {
+      background-color: #c00;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 0, 0, 0.5);
+    }
+  }
+}
+
 // Main content styling
 .main-content {
   h1, h2, h3, h4, h5, h6 {
