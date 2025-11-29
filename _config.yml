@@ -12,10 +12,11 @@ youtube_url: "https://www.youtube.com/@technobear5547"
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-hacker
+remote_theme: pages-themes/cayman@v0.2.0
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
 # Collections for devices and consoles
 collections:
@@ -41,12 +42,12 @@ defaults:
       path: ""
       type: "devices"
     values:
-      layout: "device"
+      layout: "page"
   - scope:
       path: ""
       type: "consoles"
     values:
-      layout: "console"
+      layout: "page"
 
 # Exclude from processing
 exclude:

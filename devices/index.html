@@ -1,0 +1,19 @@
+---
+layout: default
+title: Android Devices
+---
+
+<h1>Android Devices</h1>
+<p>Custom ROM development for various Android devices.</p>
+
+<ul>
+  {% assign sorted_devices = site.devices | sort: "order" %}
+  {% for device in sorted_devices %}
+    <li>
+      <h3><a href="{{ device.url | relative_url }}">{{ device.title }}</a></h3>
+      {% if device.codename %}
+      <p><strong>Codename:</strong> {{ device.codename }}</p>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

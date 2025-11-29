@@ -1,0 +1,84 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// Custom color scheme
+$primary-color: #00d9ff;
+$secondary-color: #bd93f9;
+$bg-dark: #0d1117;
+$bg-darker: #161b22;
+
+// Override default header
+.page-header {
+  background: linear-gradient(135deg, $bg-dark, $bg-darker);
+  border-bottom: 3px solid $primary-color;
+}
+
+.project-name {
+  color: $primary-color !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.project-tagline {
+  color: #c9d1d9;
+}
+
+// Navigation styling
+.site-nav {
+  margin-top: 1.5rem;
+  
+  .btn {
+    margin: 0.2rem;
+    background-color: rgba(0, 217, 255, 0.2);
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    
+    &:hover {
+      background-color: $primary-color;
+      color: $bg-dark;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 217, 255, 0.3);
+    }
+  }
+}
+
+// Main content styling
+.main-content {
+  h1, h2, h3, h4, h5, h6 {
+    color: $primary-color;
+  }
+  
+  a {
+    color: $primary-color;
+    
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+  
+  .btn {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(189, 147, 249, 0.2));
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    
+    &:hover {
+      background: linear-gradient(135deg, $primary-color, $secondary-color);
+      color: white;
+    }
+  }
+  
+  code {
+    background-color: rgba(0, 217, 255, 0.1);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    color: #50fa7b;
+  }
+}
+
+// Footer styling
+.site-footer {
+  border-top: 2px solid $primary-color;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  color: #8b949e;
+}

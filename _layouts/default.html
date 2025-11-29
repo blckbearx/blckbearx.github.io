@@ -1,158 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="{{ page.description | default: site.description }}">
-    <meta name="author" content="{{ site.author }}">
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
     
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel='shortcut icon' type='image/x-icon' href='{{ "/res/favicon_light.png" | relative_url }}'/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.1.3/darkly/bootstrap.min.css" integrity="sha512-+N6Y5DvJY2LgG4V/ZNlU2d65KGxmZuwqr1Lp+8dQm/RJIQcp8lXiVS+Vr3gAk++xBDT8i/CsFM4UwGBIGwj1nQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" integrity="sha512-Oy+sz5W86PK0ZIkawrG0iv7XwWhYecM3exvUtMKNJMekGFJtVAhibhRPTpmyTj8+lJCkmWfnpxKgT2OopquBHA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <style>
-        :root {
-            --primary-color: #00d9ff;
-            --secondary-color: #bd93f9;
-            --accent-color: #50fa7b;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
-            min-height: 100vh;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        .navbar {
-            background: rgba(13, 17, 23, 0.95) !important;
-            backdrop-filter: blur(10px);
-            border-bottom: 2px solid var(--primary-color);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-        
-        .nav-link {
-            color: #c9d1d9 !important;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .nav-link:hover, .nav-link.active {
-            color: var(--primary-color) !important;
-        }
-        
-        .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 2px;
-            background: var(--primary-color);
-        }
-        
-        .card {
-            background: rgba(22, 27, 34, 0.8) !important;
-            border: 1px solid rgba(0, 217, 255, 0.3) !important;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 48px rgba(0, 217, 255, 0.2);
-        }
-        
-        .card-header {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(189, 147, 249, 0.2)) !important;
-            border-bottom: 2px solid var(--primary-color) !important;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border: none;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(0, 217, 255, 0.4);
-        }
-        
-        .btn-secondary {
-            background: rgba(0, 217, 255, 0.2);
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-secondary:hover {
-            background: var(--primary-color);
-            color: #0d1117;
-            transform: scale(1.05);
-        }
-        
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .dropdown-menu {
-            background: rgba(22, 27, 34, 0.95) !important;
-            border: 1px solid rgba(0, 217, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-        
-        .dropdown-item {
-            color: #c9d1d9 !important;
-            transition: all 0.3s ease;
-        }
-        
-        .dropdown-item:hover {
-            background: rgba(0, 217, 255, 0.2) !important;
-            color: var(--primary-color) !important;
-        }
-        
-        footer {
-            background: rgba(13, 17, 23, 0.95);
-            border-top: 2px solid var(--primary-color);
-            margin-top: auto;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--primary-color);
-        }
-        
-        code {
-            background: rgba(0, 217, 255, 0.1);
-            border: 1px solid rgba(0, 217, 255, 0.3);
-            border-radius: 4px;
-            padding: 2px 6px;
-            color: var(--accent-color);
-        }
-    </style>
-</head>
+  </head>
+  <body>
+    <header class="page-header" role="banner">
+      <h1 class="project-name">{{ site.title }}</h1>
+      <h2 class="project-tagline">{{ site.description }}</h2>
+      
+      <nav class="site-nav">
+        <a href="{{ '/' | relative_url }}" class="btn">Home</a>
+        <a href="{{ '/blog/' | relative_url }}" class="btn">Blog</a>
+        <a href="{{ '/devices/' | relative_url }}" class="btn">Devices</a>
+        <a href="{{ '/consoles/' | relative_url }}" class="btn">Consoles</a>
+        <a href="{{ '/about.html' | relative_url }}" class="btn">About</a>
+      </nav>
+    </header>
 
-<body class="d-flex flex-column">
-    {% include navigation.html %}
-    
-    <main class="flex-fill">
-        {{ content }}
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+
+      <footer class="site-footer">
+        <span class="site-footer-credits">
+          &copy; {{ 'now' | date: "%Y" }} {{ site.author }} | 
+          <a href="https://github.com/{{ site.github_username }}">GitHub</a> | 
+          <a href="{{ site.youtube_url }}">YouTube</a>
+        </span>
+      </footer>
     </main>
-    
-    <footer class="text-center text-muted py-4 mt-5">
-        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author }}. Built with Jekyll & 💙</p>
-    </footer>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js" integrity="sha512-pax4MlgXjHEPfCwcJLQhigY7+N8rt6bVvWLFyUMuxShv170X53TRzGPmPkZmGBhk+jikR8WBM4yl7A9WMHHqvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</body>
+  </body>
 </html>

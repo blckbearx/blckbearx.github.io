@@ -1,0 +1,16 @@
+---
+layout: default
+title: Consoles
+---
+
+<h1>Console Development</h1>
+<p>Homebrew development for PlayStation consoles.</p>
+
+<ul>
+  {% assign sorted_consoles = site.consoles | sort: "order" %}
+  {% for console in sorted_consoles %}
+    <li>
+      <h3><a href="{{ console.url | relative_url }}">{{ console.title }}</a></h3>
+    </li>
+  {% endfor %}
+</ul>
