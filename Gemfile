@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3"
 gem "webrick", "~> 1.8"
+gem "jekyll-theme-hacker"
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
@@ -9,4 +10,4 @@ group :jekyll_plugins do
 end
 
 # GitHub Pages compatibility (optional - uncomment if deploying to GitHub Pages)
-gem "github-pages", group: :jekyll_plugins
+# gem "github-pages", group: :jekyll_plugins

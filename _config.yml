@@ -12,7 +12,7 @@ youtube_url: "https://www.youtube.com/@technobear5547"
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
